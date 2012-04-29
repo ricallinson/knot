@@ -60,6 +60,9 @@ Note: These have not been fully tested yet.
 * util.pump(readableStream, writableStream, [callback])
 * util.inherits(constructor, superConstructor)
 
+### Events
+### Buffer
+### Stream
 ### Path
 
 Note: These have not been fully tested yet.
@@ -71,3 +74,41 @@ Note: These have not been fully tested yet.
 * path.dirname(p)
 * path.basename(p, [ext])
 * path.extname(p)
+
+### URL
+### Query Strings
+
+### Assertion Testing
+
+Note: These have not been fully tested yet.
+
+* assert.fail(actual, expected, message, operator)
+* assert(value, message), assert.ok(value, [message])
+* assert.equal(actual, expected, [message])
+* assert.notEqual(actual, expected, [message])
+* assert.deepEqual(actual, expected, [message])
+* assert.notDeepEqual(actual, expected, [message])
+* assert.strictEqual(actual, expected, [message])
+* assert.notStrictEqual(actual, expected, [message])
+* assert.throws(block, [error], [message])
+* assert.doesNotThrow(block, [error], [message])
+* assert.ifError(value)
+
+## Modules Not Supported
+
+* Crypto
+* File System
+* Net
+* UDP/Datagram
+* DNS
+* HTTP
+* HTTPS
+* Readline
+* REPL
+* VM
+* Child Processes
+* TTY
+* ZLIB
+* OS
+* Debugger
+* Cluster

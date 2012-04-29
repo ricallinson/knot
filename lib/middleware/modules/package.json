@@ -13,7 +13,9 @@
         "modules": [
             "knot",
             "path",
-            "util"
+            "util",
+            "console",
+            "assert"
         ]
     }
 }

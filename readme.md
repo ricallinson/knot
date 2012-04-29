@@ -33,8 +33,6 @@ A programmatic folly exploring the underbelly of implementing a client-side vers
 
 ### Console
 
-Note: These have not been fully tested yet.
-
 * console.log()
 * console.info()
 * console.warn()

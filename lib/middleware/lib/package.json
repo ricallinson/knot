@@ -1,0 +1,19 @@
+{
+    "name": "",
+    "description": "Knot libraries classed as core.",
+    "version": "0.0.1",
+    "author": {
+        "name": "Richard S Allinson",
+        "email": "rsa@mounitainmansoftware.com"
+    },
+    "engines": {
+        "node": ">= 0.4.1"
+    },
+    "knot": {
+        "client": [
+            "knot",
+            "path",
+            "util"
+        ]
+    }
+}

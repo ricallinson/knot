@@ -1,3 +1,3 @@
-# Knot
+# Knot Node
 
-A client side Node experiment.
+A programmatic folly exploring the underbelly of implementing a client-side version of Node.

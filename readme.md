@@ -24,7 +24,6 @@ A programmatic folly exploring the underbelly of implementing a client-side vers
 * process.stderr
 * process.execPath
 * process.cwd()
-* process.env
 * process.version
 * process.versions
 * process.installPrefix

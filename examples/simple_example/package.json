@@ -12,7 +12,6 @@
     },
     "dependencies": {
         "express": "2.5.x",
-        "stache": "0.1.0",
-        "knot": ">= 0.0.3"
+        "stache": "0.1.0"
     }
 }

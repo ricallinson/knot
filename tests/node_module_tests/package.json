@@ -1,0 +1,22 @@
+{
+    "name": "node_module_tests",
+    "description": "",
+    "version": "0.0.1",
+    "author": {
+        "name": "Richard S Allinson",
+        "email": "rsa@mounitainmansoftware.com"
+    },
+    "engines": {
+        "node": ">= 0.6.0"
+    },
+    "knot": {
+        "main": "all_tests",
+        "modules": [
+            "process",
+            "console",
+            "utils",
+            "path",
+            "assert"
+        ]
+    }
+}

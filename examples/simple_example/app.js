@@ -5,7 +5,7 @@
 
 var express = require('express'),
     stache = require('stache'),
-    knot = require('knot'),
+    knot = require('../../'),
     app = express.createServer();
 
 /*

@@ -22,7 +22,6 @@ A programmatic folly exploring the underbelly of implementing a client-side vers
 
 * process.stdout
 * process.stderr
-* process.stdin
 * process.execPath
 * process.cwd()
 * process.env

@@ -10,7 +10,7 @@
         "node": ">= 0.6.0"
     },
     "knot": {
-        "client": [
+        "modules": [
             "lib/increment",
             "lib/math"
         ]

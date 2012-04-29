@@ -1,7 +1,7 @@
 {
     "name": "knot",
     "description": "A client side Node experiment.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": {
         "name": "Richard S Allinson",
         "email": "rsa@mounitainmansoftware.com"

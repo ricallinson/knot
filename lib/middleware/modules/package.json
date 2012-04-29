@@ -10,7 +10,7 @@
         "node": ">= 0.4.1"
     },
     "knot": {
-        "client": [
+        "modules": [
             "knot",
             "path",
             "util"

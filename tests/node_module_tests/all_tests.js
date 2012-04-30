@@ -1,3 +1,10 @@
 
-require('node_module_tests/console');
-require('node_module_tests/process');
+require('./console');
+require('./process');
+require('./util');
+require('./path');
+require('./assert');
+
+// To-do
+require('./events');
+require('./stream');

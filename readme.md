@@ -77,7 +77,28 @@ Notes: process.binding('buffer').SlowBuffer.
 
 Note: Not tested yet.
 
-* all.functions
+* stream.pipe(destination, [options])
+
+#### Readable Stream Interface
+
+* stream.readable
+* stream.setEncoding()
+* stream.pause()
+* stream.resume()
+* stream.destroy()
+* stream.destroySoon()
+* stream.pipe(destination, [options])
+
+#### Writable Stream Interface
+
+* stream.writable
+* stream.write(string, [encoding], [fd])
+* (requires buffer) stream.write(buffer)
+* stream.end()
+* stream.end(string, encoding)
+* (requires buffer) stream.end(buffer)
+* stream.destroy()
+* stream.destroySoon()
 
 ### Path
 

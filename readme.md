@@ -69,7 +69,9 @@ Note: Not tested yet.
 
 ### Buffer
 
-Note: Uses process.binding().
+Notes: process.binding('buffer').SlowBuffer.
+
+* (check support) SlowBuffer
 
 ### Stream
 
@@ -93,7 +95,7 @@ Note: Requires "Query Strings".
 
 ### Query Strings
 
-Note: Uses process.binding().
+Notes: process.binding('http_parser').urlDecode. Requires "Buffer".
 
 ### Assertion Testing
 

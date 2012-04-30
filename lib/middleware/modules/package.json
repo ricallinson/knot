@@ -12,11 +12,11 @@
     "knot": {
         "modules": [
             "knot",
-            "path",
+            "console",
             "util",
             "events",
             "stream",
-            "console",
+            "path",
             "assert"
         ]
     }

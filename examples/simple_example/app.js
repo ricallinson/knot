@@ -1,34 +1,24 @@
 
-/* 
- * Load modules
+/*
+ * Load required modules
  */
 
-var express = require('express'),
-    stache = require('stache'),
+var connect = require('connect'),
     knot = require('../../'),
-    app = express.createServer();
+    app = connect.createServer();
 
 /*
- * Tell express to use the knot middleware.
+ * Tell connect to use the knot middleware.
  */
 
 app.use(knot.node(process.cwd()));
 
 /*
- * Register mustache for .html
+ * Add a simple function to serve the index.html file
  */
 
-app.register('.html', stache);
-app.set('view options', {
-    layout: false
-});
-
-/*
- * Add a simple route to our flat file
- */
-
-app.get('/', function(req, res){
-    res.render('index.html');
+app.use(function(req, res){
+    res.end(require('fs').readFileSync('./views/index.html'));
 });
 
 /*

@@ -11,7 +11,7 @@
     },
     "knot": {
         "modules": [
-            "knot",
+            "process",
             "console",
             "util",
             "events",

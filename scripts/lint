@@ -1,0 +1,4 @@
+echo Running JSLint
+jslint ./lib/middleware/node.js
+find ./examples -name "*.js" -print0 | xargs -0 jslint
+find ./tests -name "*.js" -print0 | xargs -0 jslint

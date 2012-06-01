@@ -1,6 +1,6 @@
 {
-    "name": "knot_example_basic",
-    "description": "A basic example of knot node using connect.",
+    "name": "knot_example",
+    "description": "An example of knot node using connect.",
     "version": "0.0.1",
     "author": {
         "name": "Richard S Allinson",

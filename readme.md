@@ -2,6 +2,16 @@
 
 A programmatic folly exploring the underbelly of implementing a client-side version of Node.
 
+## Exmaple Usage
+
+    <script type="text/javascript" src="/knot/process.js"></script>
+    <script type="text/javascript">
+        process(function(exports, require, module) {
+            var util = require('util');
+            console.log(util.inspect(this, true, 6));
+        });
+    </script>
+
 ## Supported Modules & Functions
 
 ### Globals

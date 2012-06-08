@@ -1,7 +1,7 @@
 {
     "name": "knot",
     "description": "A client side Node experiment.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": {
         "name": "Richard S Allinson",
         "email": "rsa@mounitainmansoftware.com"
@@ -12,5 +12,10 @@
     },
     "dependencies": {
         "connect": "1.x"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/capecodehq/knot.git"
+    },
+    "license": "MIT"
 }

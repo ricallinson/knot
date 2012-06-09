@@ -1,7 +1,7 @@
 {
     "name": "knot",
     "description": "A client side Node experiment.",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "author": {
         "name": "Richard S Allinson",
         "email": "rsa@mounitainmansoftware.com"
@@ -11,7 +11,8 @@
         "node": ">= 0.6.0 < 0.7.0"
     },
     "dependencies": {
-        "connect": "1.x"
+        "connect": "1.x",
+        "uglify-js": "1.3.x"
     },
     "repository": {
         "type": "git",

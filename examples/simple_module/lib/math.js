@@ -31,8 +31,8 @@ exports.add = function () {
         l = args.length;
 
     while (i < l) {
-        i = i + 1;
         sum += args[i];
+        i = i + 1;
     }
 
     return sum;

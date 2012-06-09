@@ -95,11 +95,20 @@ Notes: process.binding('buffer').SlowBuffer.
 
 ### URL
 
-Note: Requires "Query Strings".
+Note: Not fully tested yet. Requires "Query Strings".
+
+* url.parse(urlStr, [parseQueryString], [slashesDenoteHost])
+* url.format(urlObj)
+* url.resolve(from, to)
 
 ### Query Strings
 
-Notes: process.binding('http_parser').urlDecode. Requires "Buffer".
+Note: Not fully tested yet. Commented out "process.binding('http_parser').urlDecode" to make it work.
+
+* querystring.stringify(obj, [sep], [eq])
+* querystring.parse(str, [sep], [eq])
+* querystring.escape
+* querystring.unescape
 
 ### Assertion Testing
 

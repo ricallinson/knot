@@ -10,8 +10,8 @@
         "node": ">= 0.6.0"
     },
     "knot": {
-        "main": "all_tests",
         "modules": [
+            "index",
             "process",
             "console",
             "util",

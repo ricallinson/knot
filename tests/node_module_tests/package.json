@@ -16,7 +16,6 @@
             "console",
             "util",
             "events",
-            "stream",
             "path",
             "assert"
         ]

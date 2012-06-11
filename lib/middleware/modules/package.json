@@ -15,12 +15,12 @@
             "console",
             "util",
             "events",
-            "stream",
             "path",
             "assert",
             "url",
             "punycode",
-            "querystring"
+            "querystring",
+            "dummy"
         ]
     }
 }

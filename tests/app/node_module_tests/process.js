@@ -1,0 +1,90 @@
+//    (The MIT License)
+//
+//    Copyright (c) 2012 Richard S Allinson <rsa@mountainmansoftware.com>
+//
+//    Permission is hereby granted, free of charge, to any person obtaining
+//    a copy of this software and associated documentation files (the
+//    'Software'), to deal in the Software without restriction, including
+//    without limitation the rights to use, copy, modify, merge, publish,
+//    distribute, sublicense, and/or sell copies of the Software, and to
+//    permit persons to whom the Software is furnished to do so, subject to
+//    the following conditions:
+//
+//    The above copyright notice and this permission notice shall be
+//    included in all copies or substantial portions of the Software.
+//
+//    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+//    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+//    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+//    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+//    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+//    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+//    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+'use strict';
+
+var assert = require('assert');
+
+describe('process', function () {
+
+    describe('.execPath', function () {
+        it('should return /', function () {
+            assert.equal(process.execPath, '/', process.execPath);
+        });
+    });
+
+    describe('.cwd()', function () {
+        it('should return /', function () {
+            assert.equal(process.cwd(), '/', process.cwd());
+        });
+    });
+
+    describe('.version', function () {
+        it('should return 0.0.3', function () {
+            assert.equal(process.version, '0.0.3', process.version);
+        });
+    });
+
+    describe('.versions', function () {
+        it('should return {knot: val, arch: val}', function () {
+            assert.equal(process.versions.knot, '0.0.3', process.versions.knot);
+            assert.ok(process.versions.arch, process.versions.arch);
+        });
+    });
+
+    describe('.installPrefix', function () {
+        it('should return /knot/', function () {
+            assert.equal(process.installPrefix, '/knot/', process.installPrefix);
+        });
+    });
+
+    describe('.stdout.write()', function () {
+        it('should return "function"', function () {
+            assert.equal(typeof process.stdout.write, 'function');
+        });
+    });
+
+    describe('.stderr.write()', function () {
+        it('should return "function"', function () {
+            assert.equal(typeof process.stderr.write, 'function');
+        });
+    });
+
+    describe('.arch', function () {
+        it('should return string', function () {
+            assert.ok(process.arch, process.arch);
+        });
+    });
+
+    describe('.platform', function () {
+        it('should return sting', function () {
+            assert.ok(process.platform, process.platform);
+        });
+    });
+
+    describe('.uptime()', function () {
+        it('should return int', function () {
+            assert.equal(parseInt(process.uptime()).toString(), process.uptime(), process.uptime());
+        });
+    });
+});

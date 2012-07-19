@@ -21,32 +21,40 @@
 //    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 //    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//'use strict';
+/*jslint stupid: true, nomen: true*/
 
-var util = require('util');
+'use strict';
 
-console.log(util.format('%s:%s', 'foo', 'bar', 'baz'));  // 'foo:bar baz'
-util.debug('debug message on stderr');
-util.error('error message on stderr');
-util.puts('puts message on stderr');
-util.print('print message on stderr');
-util.log('Timestamped message.');
-console.log(util.inspect(util, true, null));
+/* 
+ * Load required modules
+ */
 
-console.log(util.isArray([])); // true
-console.log(util.isArray({})); // false
+var connect = require('connect'),
+    knot = require('../../'),
+    app = connect.createServer();
 
-console.log(util.isRegExp(/some regexp/));// true
-console.log(util.isRegExp(new RegExp('another regexp')));// true
-console.log(util.isRegExp({})); // false
+/*
+ * Tell connect to use the knot middleware.
+ */
 
-console.log(util.isDate(new Date()));// true
-console.log(util.isDate(Date()));// false (without 'new' returns a String)
-console.log(util.isDate({}));// false
+app.use(knot.node());
 
-console.log(util.isError(new Error()));// true
-console.log(util.isError(new TypeError()));// true
-console.log(util.isError({ name: 'Error', message: 'an error occurred' }));// false
+/*
+ * Server some staic files for mocha
+ */
 
-console.log('util.pump() not tested');
-console.log('util.inherits() not tested');
+app.use(connect.static(__dirname + '/static'));
+
+/*
+ * Add a simple function to serve the index.html file
+ */
+
+app.use(function (req, res) {
+    res.end(require('fs').readFileSync('./static/index.html'));
+});
+
+/*
+ * Listen for requests on http://localhost:3000/
+ */
+
+app.listen(3000);

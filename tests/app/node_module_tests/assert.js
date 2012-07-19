@@ -28,49 +28,49 @@
 var assert = require('assert');
 
 describe('assert', function () {
-    describe('function', function () {
+    describe('as function', function () {
         it('should return true', function () {
             assert(true, "my assert message");
         });
     });
 
-    describe('ok', function () {
+    describe('.ok()', function () {
         it('should return true', function () {
             assert.ok(true, "my assert ok message");
         });
     });
 
-    describe('equal', function () {
+    describe('.equal()', function () {
         it('should return true', function () {
             assert.equal(1, 1, 'message');
         });
     });
 
-    describe('notEqual', function () {
+    describe('.notEqual()', function () {
         it('should return true', function () {
             assert.notEqual(1, 2, 'message');
         });
     });
 
-    describe('strictEqual', function () {
+    describe('.strictEqual()', function () {
         it('should return true', function () {
             assert.strictEqual('a', 'a', 'message');
         });
     });
 
-    describe('notStrictEqual', function () {
+    describe('.notStrictEqual()', function () {
         it('should return true', function () {
             assert.notStrictEqual('a', 'b', 'message');
         });
     });
 
-    describe('ifError', function () {
+    describe('.ifError()', function () {
         it('should return true', function () {
             assert.ifError(false);
         });
     });
 
-    describe('throws', function () {
+    describe('.throws()', function () {
         it('should return true', function () {
             assert.throws(
                 function () {
@@ -81,7 +81,7 @@ describe('assert', function () {
         });
     });
 
-    describe('doesNotThrow', function () {
+    describe('.doesNotThrow()', function () {
         it('should return true', function () {
             assert.doesNotThrow(
                 function () {
@@ -92,7 +92,7 @@ describe('assert', function () {
         });
     });
 
-    describe('fail', function () {
+    describe('.fail()', function () {
         it('should return true', function () {
             assert.throws(
                 function () {

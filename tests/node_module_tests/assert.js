@@ -21,37 +21,89 @@
 //    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 //    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+/*global describe: true, it: true*/
+
 'use strict';
 
 var assert = require('assert');
 
-assert.throws(
-    function () {
-        assert.fail('a', 'b', 'message', 'operator');
-    },
-    Error
-);
-assert(true, "my assert message");
-assert.ok(true, "my assert ok message");
-assert.equal(1, 1, 'message');
-assert.notEqual(1, 2, 'message');
+describe('assert', function () {
+    describe('function', function () {
+        it('should return true', function () {
+            assert(true, "my assert message");
+        });
+    });
+
+    describe('ok', function () {
+        it('should return true', function () {
+            assert.ok(true, "my assert ok message");
+        });
+    });
+
+    describe('equal', function () {
+        it('should return true', function () {
+            assert.equal(1, 1, 'message');
+        });
+    });
+
+    describe('notEqual', function () {
+        it('should return true', function () {
+            assert.notEqual(1, 2, 'message');
+        });
+    });
+
+    describe('strictEqual', function () {
+        it('should return true', function () {
+            assert.strictEqual('a', 'a', 'message');
+        });
+    });
+
+    describe('notStrictEqual', function () {
+        it('should return true', function () {
+            assert.notStrictEqual('a', 'b', 'message');
+        });
+    });
+
+    describe('ifError', function () {
+        it('should return true', function () {
+            assert.ifError(false);
+        });
+    });
+
+    describe('throws', function () {
+        it('should return true', function () {
+            assert.throws(
+                function () {
+                    throw new Error("Wrong value");
+                },
+                Error
+            );
+        });
+    });
+
+    describe('doesNotThrow', function () {
+        it('should return true', function () {
+            assert.doesNotThrow(
+                function () {
+                    // No throw here
+                },
+                Error
+            );
+        });
+    });
+
+    describe('fail', function () {
+        it('should return true', function () {
+            assert.throws(
+                function () {
+                    assert.fail('a', 'b', 'message', 'operator');
+                },
+                Error
+            );
+        });
+    });
+});
 
 // Requires Buffer
 //assert.deepEqual({a: {b: [1, 2]}}, {a: {b: [1, 2]}}, 'message');
 //assert.notDeepEqual({a: {b: [1, 2]}}, {a: {b: [1, 2, 3]}}, 'message');
-
-assert.strictEqual('a', 'a', 'message');
-assert.notStrictEqual('a', 'b', 'message');
-assert.throws(
-    function () {
-        throw new Error("Wrong value");
-    },
-    Error
-);
-assert.doesNotThrow(
-    function () {
-        // No throw here
-    },
-    Error
-);
-assert.ifError(false);

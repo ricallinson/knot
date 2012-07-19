@@ -37,14 +37,20 @@ var connect = require('connect'),
  * Tell connect to use the knot middleware.
  */
 
-app.use(knot.node(process.cwd()));
+app.use(knot.node());
+
+/*
+ * Server some staic files for mocha
+ */
+
+app.use(connect.static(__dirname + '/static'));
 
 /*
  * Add a simple function to serve the index.html file
  */
 
 app.use(function (req, res) {
-    res.end(require('fs').readFileSync('./views/index.html'));
+    res.end(require('fs').readFileSync('./static/index.html'));
 });
 
 /*

@@ -14,10 +14,10 @@
         "test": "mocha --recursive ./tests"
     },
     "dependencies": {
-        "connect": "1.x",
         "uglify-js": "1.3.x"
     },
     "devDependencies": {
+        "connect": "1.x",
         "mocha": ">=1.3.x"
     },
     "repository": {

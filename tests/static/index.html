@@ -3,13 +3,19 @@
   <head>
     <title>Testing Knot</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/mocha.css" />
+    <script type="text/javascript" src="/mocha.js"></script>
     <script type="text/javascript" src="/knot/process.js"></script>
   </head>
   <body>
-    Testing Knot.
+    <div id="mocha"></div>
     <script type="text/javascript">
         process(function(exports, require, module) {
-            require('node_module_tests');
+            //require('node_module_tests');
+            console.log('Testing Knot');
+            mocha.setup('bdd');
+            require('node_module_tests/assert');
+            mocha.run();
         });
     </script>
   </body>

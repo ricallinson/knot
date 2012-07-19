@@ -124,4 +124,25 @@ describe('console', function () {
             assert.equal(stream.lastMessage.slice(-3), 'ms\n', stream.lastMessage.slice(-3));
         });
     });
+
+    describe('.trace()', function () {
+        it('should output a stack trace', function () {
+            console.trace('trace');
+            assert.equal(stream.lastMessage.length, 681, stream.lastMessage.length);
+        });
+    });
+
+    describe('.assert()', function () {
+        it('should do nothing', function () {
+            console.assert(true);
+        });
+        it('should throw an error', function () {
+            assert.throws(
+                function () {
+                    console.assert(false);
+                },
+                Error
+            );
+        });
+    });
 });

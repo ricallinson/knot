@@ -1,5 +1,7 @@
 # Knot Node
 
+[![Build Status](https://secure.travis-ci.org/capecodehq/knot.png?branch=master)](http://travis-ci.org/capecodehq/knot)
+
 A programmatic folly exploring the underbelly of implementing a client-side version of Node.
 
 ## Exmaple Usage

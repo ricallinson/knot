@@ -103,12 +103,12 @@ Notes: process.binding('buffer').SlowBuffer.
 
 ### Query Strings
 
-Note: Not fully tested yet. Commented out "process.binding('http_parser').urlDecode" to make it work.
+Commented out "process.binding('http_parser').urlDecode" to make it work.
 
 * querystring.stringify(obj, [sep], [eq])
 * querystring.parse(str, [sep], [eq])
 * querystring.escape
-* querystring.unescape
+* (does not work) querystring.unescape
 
 ### Assertion Testing
 

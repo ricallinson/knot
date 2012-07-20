@@ -97,8 +97,6 @@ Notes: process.binding('buffer').SlowBuffer.
 
 ### URL
 
-Note: Not fully tested yet. Requires "Query Strings".
-
 * url.parse(urlStr, [parseQueryString], [slashesDenoteHost])
 * url.format(urlObj)
 * url.resolve(from, to)

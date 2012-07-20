@@ -38,6 +38,7 @@ describe('console', function () {
             }
             this.lastMessage = string;
         };
+
         stream.end = function (string) {
             stream.write(string);
         };

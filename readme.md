@@ -68,8 +68,6 @@ A programmatic folly exploring the underbelly of implementing a client-side vers
 
 ### Events
 
-Note: Not tested yet.
-
 * emitter.addListener(event, listener)
 * emitter.on(event, listener)
 * emitter.once(event, listener)

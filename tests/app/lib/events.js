@@ -24,11 +24,159 @@
 'use strict';
 
 var events = require('events');
+var util = require('util');
+var assert = require('assert');
 
 describe('events', function () {
-    describe('require', function () {
+
+    var Eventer = {};
+
+    before(function (done) {
+
+        Eventer = function () {
+
+            events.EventEmitter.call(this);
+
+            this.foo = function () {
+                var data = 'baz'
+                this.emit('bar', data);
+            }
+
+            this.qux = function () {
+                this.emit("quux");
+            }
+        };
+
+        util.inherits(Eventer, events.EventEmitter);
+
+        done();
+    });
+
+    describe('addListener', function () {
+        it('should trigger addListener with undefined', function () {
+            var eventer = new Eventer();
+            eventer.addListener('quux', function (e) {
+                assert.equal(e, undefined, e);
+            });
+            eventer.qux();
+        });
+        it('should trigger addListener with string "baz"', function () {
+            var eventer = new Eventer();
+            eventer.addListener('bar', function (e) {
+                assert.equal(e, 'baz', e);
+            });
+            eventer.foo();
+        });
+    });
+    
+    describe('on', function () {
+        it('should trigger on with undefined', function () {
+            var eventer = new Eventer();
+            eventer.on('quux', function (e) {
+                assert.equal(e, undefined, e);
+            });
+            eventer.qux();
+        });
+        it('should trigger on with string "baz"', function () {
+            var eventer = new Eventer();
+            eventer.on('bar', function (e) {
+                assert.equal(e, 'baz', e);
+            });
+            eventer.foo();
+        });
+    });
+
+    describe('once', function () {
+        it('should trigger on with undefined', function () {
+            var eventer = new Eventer(),
+                count = 0;
+            eventer.once('quux', function (e) {
+                count = count + 1;
+                assert.equal(count, 1, count);
+            });
+            eventer.qux();
+            eventer.qux();
+            eventer.qux();
+        });
+        it('should trigger on with string "baz"', function () {
+            var eventer = new Eventer(),
+                count = 0;
+            eventer.once('bar', function (e) {
+                count = count + 1;
+                assert.equal(count, 1, count);
+            });
+            eventer.foo();
+            eventer.foo();
+            eventer.foo();
+        });
+    });
+
+    describe('removeListener', function () {
         it('should not throw an error', function () {
-//            console.log('events');
+            var eventer = new Eventer(),
+                callback;
+
+            callback = function(e) {
+                throw new Error();
+            };
+
+            eventer.on('bar', callback);
+
+            eventer.removeListener('bar', callback);
+
+            eventer.foo();
+        });
+    });
+
+    describe('removeAllListeners', function () {
+        it('should not throw an error', function () {
+            var eventer = new Eventer(),
+                callback;
+
+            callback = function(e) {
+                throw new Error();
+            };
+
+            eventer.on('bar', callback);
+
+            eventer.removeAllListeners('bar', callback);
+
+            eventer.foo();
+        });
+    });
+
+    describe('setMaxListeners', function () {
+        it('should not throw an error', function () {
+            var eventer = new Eventer(),
+                callback;
+
+            callback = function(e) {
+                throw new Error('Too many events registered');
+            };
+
+            eventer.setMaxListeners(2);
+
+            eventer.on('bar', callback);
+            eventer.on('bar', callback);
+            eventer.on('bar', callback);
+        });
+    });
+
+    describe('listeners', function () {
+        it('should ', function () {
+            var eventer = new Eventer(),
+                callback;
+
+            callback = function(e) {
+                throw new Error();
+            };
+
+            eventer.on('bar', callback);
+            eventer.on('bar', callback);
+            eventer.on('bar', callback);
+            eventer.on('bar', callback);
+
+            assert.equal(eventer.listeners('bar').length, 4, eventer.listeners('bar').length);
         });
     });
 });

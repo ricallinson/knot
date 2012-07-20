@@ -102,8 +102,26 @@ describe('assert', function () {
             );
         });
     });
-});
 
-// Requires Buffer
-//assert.deepEqual({a: {b: [1, 2]}}, {a: {b: [1, 2]}}, 'message');
-//assert.notDeepEqual({a: {b: [1, 2]}}, {a: {b: [1, 2, 3]}}, 'message');
+    describe('.deepEqual()', function () {
+        it('should return true', function () {
+            assert.throws(
+                function () {
+                    assert.deepEqual({a: {b: [1, 2]}}, {a: {b: [1, 2]}});
+                },
+                Error
+            );
+        });
+    });
+
+    describe('.notDeepEqual()', function () {
+        it('should return true', function () {
+            assert.throws(
+                function () {
+                    assert.deepEqual({a: {b: [1, 2]}}, {a: {b: [1, 2, 3]}});
+                },
+                Error
+            );
+        });
+    });
+});

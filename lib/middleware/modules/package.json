@@ -8,19 +8,5 @@
     },
     "engines": {
         "node": ">= 0.4.1"
-    },
-    "knot": {
-        "modules": [
-            "process",
-            "console",
-            "util",
-            "events",
-            "path",
-            "assert",
-            "url",
-            "punycode",
-            "querystring",
-            "dummy"
-        ]
     }
 }

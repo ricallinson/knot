@@ -41,14 +41,14 @@ describe('module', function () {
     });
 
     describe('.id', function () {
-        it('should return "node_module_tests/require"', function () {
-            assert.equal(module.id, 'node_module_tests/require');
+        it('should return "_root_/lib/require"', function () {
+            assert.equal(module.id, '_root_/lib/require');
         });
     });
 
     describe('.filename', function () {
-        it('should return "node_module_tests/require.js"', function () {
-            assert.equal(module.filename, 'node_module_tests/require.js');
+        it('should return "_root_/lib/require.js"', function () {
+            assert.equal(module.filename, '_root_/lib/require.js');
         });
     });
 

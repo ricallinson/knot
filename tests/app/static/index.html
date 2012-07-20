@@ -14,13 +14,13 @@
             //require('node_module_tests');
             console.log('Testing Knot');
             mocha.setup('bdd');
-            require('node_module_tests/require');
-            require('node_module_tests/assert');
-            require('node_module_tests/console');
-            require('node_module_tests/events');
-            require('node_module_tests/path');
-            require('node_module_tests/process');
-            require('node_module_tests/util');
+            require('./lib/require');
+            require('./lib/assert');
+            require('./lib/console');
+            require('./lib/events');
+            require('./lib/path');
+            require('./lib/process');
+            require('./lib/util');
             mocha.run();
         });
     </script>

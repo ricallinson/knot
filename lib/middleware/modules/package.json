@@ -7,6 +7,6 @@
         "email": "rsa@mounitainmansoftware.com"
     },
     "engines": {
-        "node": ">= 0.4.1"
+        "node": ">= 0.6.0"
     }
 }

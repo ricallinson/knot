@@ -64,7 +64,7 @@ A programmatic folly exploring the underbelly of implementing a client-side vers
 * util.isDate(object)
 * util.isError(object)
 * (not tested) util.pump(readableStream, writableStream, [callback])
-* (not tested) util.inherits(constructor, superConstructor)
+* util.inherits(constructor, superConstructor)
 
 ### Events
 

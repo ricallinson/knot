@@ -165,7 +165,25 @@ describe('util', function () {
             assert.equal(util.isError({ name: 'Error', message: 'an error occurred' }), false);
         });
     });
+
+    describe('.inherits()', function () {
+        it('should return 101', function () {
+
+            function Foo() {}
+
+            Foo.prototype.baz = function () {
+                return 101;
+            }
+
+            function Bar() {}
+
+            util.inherits(Bar, Foo);
+
+            var test = new Bar();
+
+            assert.equal(test.baz(), 101, test.baz());
+        });
+    });
 });
 
 //console.log('util.pump() not tested');
-//console.log('util.inherits() not tested');

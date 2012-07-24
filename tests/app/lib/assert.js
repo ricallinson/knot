@@ -30,7 +30,7 @@ var assert = require('assert');
 describe('assert', function () {
     describe('as function', function () {
         it('should return true', function () {
-            assert(true, "my assert message");
+            assert(false, "my assert message");
         });
     });
 

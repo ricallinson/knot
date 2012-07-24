@@ -31,13 +31,16 @@
 
 var connect = require('connect'),
     knot = require('../../'),
-    app = connect.createServer();
+    app = connect.createServer(),
+    exec = require('child_process').exec,
+    localTest = process.argv[2] === 'local' ? true : false,
+    phantomjs = process.argv[3] || 'phantomjs';
 
 /*
  * Tell connect to use the knot middleware.
  */
 
-app.use(knot.node());
+app.use(knot.node(__dirname));
 
 /*
  * Server some staic files for mocha
@@ -58,3 +61,20 @@ app.use(function (req, res) {
  */
 
 app.listen(3000);
+
+if (localTest) {
+    return; // this lets us test the tests locally
+}
+
+/*
+ * Now run the Mocha tests in Phantomjs
+ */
+
+exec(phantomjs + ' ' + __dirname + '/phantomjs-mocha.js http://localhost:3000/', function (error, stdout, stderr) {
+  console.log(stdout);
+  if (error !== null) {
+      process.exit(1);
+  } else {
+      process.exit();
+  }
+});

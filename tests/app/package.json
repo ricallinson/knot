@@ -1,16 +1,16 @@
 {
-    "name": "tests",
-    "description": "",
+    "name": "knot",
+    "description": "A client side Node experiment Mocha test app.",
     "version": "0.0.1",
     "author": {
         "name": "Richard S Allinson",
         "email": "rsa@mounitainmansoftware.com"
     },
-    "main": "index",
     "engines": {
         "node": ">= 0.6.0 < 0.8.0"
     },
-    "dependencies": {
-        "connect": ">= 1.8.x"
-    }
+    "devDependencies": {
+        "connect": "1.x"
+    },
+    "license": "MIT"
 }
